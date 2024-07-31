@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        *{
+            transition: ease-in-out 0.3s;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        .signup-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        .signup-container h2 {
+            margin-bottom: 20px;
+            color: #333333;
+            font-weight: bold;
+        }
+
+        .signup-container label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #666666;
+            font-weight: bold;
+        }
+
+        .signup-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .signup-container button {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .signup-container button:hover {
+            background-color: #ffffff;
+            color: #ffffff;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.137);
+            /* border: 2px solid #4054B2; */
+        }
+
+        .signup-container p {
+            margin: 20px 0 0;
+            color: #666666;
+        }
+
+        .signup-container a {
+            color: #4054B2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-container a:hover {
+            text-decoration: underline;
+        }
+
+        .message {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const error = "<%= error %>";
+            if (error) {
+                alert(error);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="POST">
+            <label for="name">Username</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Sign Up</button>
+            <p>or</p>
+            <a href="/">Login</a>
+        </form>
+    </div>
+</body>
+
+</html>
